@@ -1,2 +1,1 @@
-def main() -> None:
-    print("Hello from mcp-client!")
+"""Interactive client for MCP servers."""

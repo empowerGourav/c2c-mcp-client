@@ -9,12 +9,20 @@ authors = [
 requires-python = ">=3.14"
 dependencies = [
     "anthropic>=2.11.0",
+    "fastapi>=0.115.0",
     "mcp>=2.3.0",
+    "prompt-toolkit>=3.0.50",
     "python-dotenv>=1.2.4",
+    "rich>=13.9.4",
+    "uvicorn>=0.34.0",
 ]
 
 [project.scripts]
-mcp-client = "mcp_client:main"
+mcp-client = "mcp_client.cli:main"
+mcp-client-web = "mcp_client.web:main"
+
+[tool.vercel]
+entrypoint = "src.mcp_client.vercel_app:app"
 
 [build-system]
 requires = ["uv_build>=0.13.7,<0.14.0"]
