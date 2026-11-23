@@ -89,7 +89,7 @@ PAGE = """<!doctype html>
         for (const tool of tools) {
           const chip = document.createElement("span");
           chip.className = "tool";
-          chip.textContent = tool.name;
+          chip.textContent = tool.name.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
           chip.title = tool.description || tool.name;
           container.append(chip);
         }
